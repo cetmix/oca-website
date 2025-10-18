@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_website_login_redirect_settings" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.website.redirect</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='seo_settings']" position="after">
+                <div class="border-top mt-3 pt-3">
+                <h2>Authentication Redirect</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field
+                                    name="website_login_redirect_enabled"
+                                    class="me-2"
+                                />
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label
+                                    for="website_login_redirect_enabled"
+                                    string="Enable redirect on login/signup"
+                                />
+                                <div class="text-muted mt-1">
+                                    Redirect users to a custom page after authentication.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="row mt16 o_settings_container"
+                        attrs="{'invisible': [('website_login_redirect_enabled', '=', False)]}"
+                    >
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label
+                                    for="website_login_redirect_url"
+                                    string="Redirect URL"
+                                />
+                                <field
+                                    name="website_login_redirect_url"
+                                    placeholder="/shop"
+                                />
+                                <div class="text-muted mt-1">
+                                    Relative path, e.g. <code>/shop</code> or <code
+                                    >/welcome</code>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

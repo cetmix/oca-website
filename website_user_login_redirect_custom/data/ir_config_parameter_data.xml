@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record
+        id="ir_config_parameter_website_login_redirect_enabled"
+        model="ir.config_parameter"
+    >
+        <field name="key">website_user_login_redirect_custom.enabled</field>
+        <field name="value">0</field>
+    </record>
+    <record
+        id="ir_config_parameter_website_login_redirect_url"
+        model="ir.config_parameter"
+    >
+        <field name="key">website_user_login_redirect_custom.url</field>
+        <field name="value">/</field>
+    </record>
+</odoo>
