@@ -6,7 +6,7 @@ from odoo.tests import common, tagged
 
 
 @tagged("post_install", "-at_install")
-class TestWebsiteLoginRedirect(common.SavepointCase):
+class TestWebsiteLoginRedirect(common.TransactionCase):
     """Test website login redirect functionality"""
 
     @classmethod
